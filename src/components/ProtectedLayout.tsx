@@ -163,7 +163,10 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
                       className="w-6 h-6 rounded-full object-cover"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
-                        (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'block';
+                        const nextEl = e.currentTarget.nextElementSibling as HTMLElement | null;
+                        if (nextEl) {
+                          nextEl.style.display = 'block';
+                        }
                       }}
                     />
                   ) : null}
