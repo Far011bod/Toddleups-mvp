@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 import { useData } from '../contexts/DataContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageToggle } from './LanguageToggle';
 import { LogOut, User as UserIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import clsx from 'clsx';
 
 interface ProtectedLayoutProps {
@@ -15,6 +15,7 @@ interface ProtectedLayoutProps {
 }
 
 export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutProps) {
+  const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const { loading: dataLoading, clearData } = useData();
@@ -121,7 +122,8 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
 
   // Redirect to landing page if not authenticated
   if (!user) {
-    return <Navigate to="/" replace />;
+    router.push('/');
+    return null;
   }
 
   // Render protected content with navigation

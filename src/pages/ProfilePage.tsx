@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { Star, Award, Camera, Upload, X } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
 import { supabase } from '../lib/supabase';
 import clsx from 'clsx';
 
 export function ProfilePage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { userProfile, refreshUserProfile } = useData();
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [uploading, setUploading] = useState(false);
@@ -126,7 +126,7 @@ export function ProfilePage() {
   };
 
   const handleStartLearning = () => {
-    navigate('/dashboard');
+    router.push('/dashboard');
   };
 
   const getInitials = (name: string | null, email: string | undefined) => {

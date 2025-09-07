@@ -1,15 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import clsx from 'clsx';
 
 export function BackButton() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { t, isRTL } = useLanguage();
 
   const handleBack = () => {
-    navigate(-1);
+    router.back();
   };
 
   const BackIcon = isRTL ? ArrowRight : ArrowLeft;

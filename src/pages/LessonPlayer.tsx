@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Check, X, Star, ArrowLeft } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -9,7 +10,7 @@ import clsx from 'clsx';
 
 export function LessonPlayer() {
   const { lessonId } = useParams<{ lessonId: string }>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { t, language, isRTL } = useLanguage();
   const { lessons, refreshUserProfile, refreshUserProgress } = useData();
   
@@ -157,7 +158,7 @@ export function LessonPlayer() {
   };
 
   const handleNext = () => {
-    navigate(`/course/${lesson?.course_id}`);
+    router.push(`/course/${lesson?.course_id}`);
   };
 
   if (!lesson) {

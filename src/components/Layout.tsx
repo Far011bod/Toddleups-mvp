@@ -1,9 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
 import { LanguageToggle } from './LanguageToggle';
 import { LogOut, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface LayoutProps {

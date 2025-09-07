@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { Rocket, Zap, Trophy } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -8,6 +8,7 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import clsx from 'clsx';
 
 export function AuthPage() {
+  const router = useRouter();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +17,13 @@ export function AuthPage() {
 
   const { user, signIn, signUp, signInWithGoogle } = useAuth();
   const { t, isRTL } = useLanguage();
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (user) {
+      router.push('/dashboard');
+    }
+  }, [user, router]);
 
   const validationRules = {
     name: {
@@ -55,10 +63,6 @@ export function AuthPage() {
   } = useFormValidation(validationRules);
 
   const [submitError, setSubmitError] = useState('');
-
-  if (user) {
-    return <Navigate to="/dashboard" replace />;
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
