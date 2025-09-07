@@ -23,6 +23,7 @@ export function Layout({ children, showNav = true, showFooter = true }: LayoutPr
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <Link to="/" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2">
                 <img 
                   src="/images/logo.webp" 
                   alt="Toddle Ups Logo" 
@@ -43,13 +44,13 @@ export function Layout({ children, showNav = true, showFooter = true }: LayoutPr
                 {user ? (
                   <>
                     <Link
-                      to="/dashboard"
+                      href="/dashboard"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       {t('nav.dashboard')}
                     </Link>
                     <Link
-                      to="/leaderboard"
+                      href="/leaderboard"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       {t('nav.leaderboard')}
@@ -71,7 +72,7 @@ export function Layout({ children, showNav = true, showFooter = true }: LayoutPr
                         user.user_metadata?.avatar_url ? 'hidden' : 'block'
                       )} />
                       <Link 
-                        to="/profile"
+                        href="/profile"
                         className="text-sm hidden sm:inline hover:text-white transition-colors"
                       >
                         {user.email}
@@ -87,7 +88,7 @@ export function Layout({ children, showNav = true, showFooter = true }: LayoutPr
                 ) : (
                   <>
                     <Link
-                      to="/auth"
+                      href="/auth"
                       className="text-gray-300 hover:text-white transition-colors"
                     >
                       {t('nav.login')}

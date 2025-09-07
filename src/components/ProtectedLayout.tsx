@@ -134,6 +134,7 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <Link to="/dashboard" className="flex items-center gap-2">
+              <Link href="/dashboard" className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">T</span>
                 </div>
@@ -142,13 +143,13 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
 
               <div className="flex items-center gap-4">
                 <Link
-                  to="/dashboard"
+                  href="/dashboard"
                   className="text-gray-300 hover:text-white transition-colors font-iransans"
                 >
                   {t('nav.dashboard')}
                 </Link>
                 <Link
-                  to="/leaderboard"
+                  href="/leaderboard"
                   className="text-gray-300 hover:text-white transition-colors font-iransans"
                 >
                   {t('nav.leaderboard')}
@@ -170,7 +171,7 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
                     user.user_metadata?.avatar_url ? 'hidden' : 'block'
                   )} />
                   <Link 
-                    to="/profile"
+                    href="/profile"
                     className="text-sm hidden sm:inline hover:text-white transition-colors"
                   >
                     {user.email}
