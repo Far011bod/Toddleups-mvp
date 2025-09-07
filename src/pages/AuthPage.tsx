@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Rocket, Zap, Trophy } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
