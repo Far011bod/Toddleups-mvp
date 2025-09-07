@@ -226,7 +226,7 @@ export function AuthPage() {
       </div>
 
       {/* Features Preview */}
-      <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+      <div className="mt-8 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
         {[
           {
             icon: Rocket,

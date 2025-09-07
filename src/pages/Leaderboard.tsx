@@ -95,7 +95,7 @@ export function Leaderboard() {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling!.style.display = 'flex';
+                        (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'flex';
                       }}
                     />
                   ) : null}

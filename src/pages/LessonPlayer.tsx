@@ -281,7 +281,7 @@ export function LessonPlayer() {
                   'w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4',
                   feedbackIcon === Check ? 'bg-green-600' : 'bg-red-600'
                 )}>
-                  <feedbackIcon.type className="w-8 h-8 text-white" />
+                  <feedbackIcon className="w-8 h-8 text-white" />
                 </div>
                 
                 <p className="text-white text-lg mb-6 font-iransans">
