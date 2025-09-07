@@ -107,7 +107,7 @@ export function LandingPage() {
 
             <div className="flex items-center gap-3">
               <Link
-                to="/auth"
+                href="/auth"
                 className={clsx(
                   'px-4 py-2 text-blue-600 hover:text-blue-500 font-medium',
                   'transition-all duration-200 font-iransans'
@@ -116,7 +116,7 @@ export function LandingPage() {
                 ورود
               </Link>
               <Link
-                to="/auth"
+                href="/auth"
                 className={clsx(
                   'px-6 py-2 bg-orange-500 hover:bg-orange-600',
                   'text-white font-medium rounded-lg',

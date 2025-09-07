@@ -75,7 +75,7 @@ export function Dashboard() {
             {courses.map((course) => (
               <Link
                 key={course.id}
-                to={`/course/${course.id}`}
+                href={`/course/${course.id}`}
                 className={clsx(
                   'block bg-gray-800/50 border border-gray-700 rounded-xl p-6',
                   'hover:bg-gray-800/70 hover:border-blue-500',

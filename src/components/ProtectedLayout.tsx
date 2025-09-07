@@ -133,7 +133,6 @@ export function ProtectedLayout({ children, showNav = true }: ProtectedLayoutPro
         <nav className="border-b border-gray-800 bg-dark-blue/80 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <Link to="/dashboard" className="flex items-center gap-2">
               <Link href="/dashboard" className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">T</span>

@@ -107,7 +107,7 @@ export function CoursePage() {
                 >
                   {canAccess ? (
                     <Link
-                      to={`/lesson/${lesson.id}`}
+                      href={`/lesson/${lesson.id}`}
                       className="flex items-center gap-4 w-full"
                     >
                       <div className="flex-shrink-0">
