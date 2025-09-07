@@ -30,7 +30,7 @@ export function Layout({ children, showNav = true, showFooter = true }: LayoutPr
                   onError={(e) => {
                     // Fallback to placeholder if logo not found
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                    (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'flex';
                   }}
                 />
                 <div className="w-8 h-8 bg-orange-500 rounded-lg items-center justify-center hidden">
