@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Trophy, Medal, Award } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
@@ -95,7 +97,10 @@ export function Leaderboard() {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
-                        (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'flex';
+                        const nextEl = e.currentTarget.nextElementSibling as HTMLElement | null;
+                        if (nextEl) {
+                          nextEl.style.display = 'flex';
+                        }
                       }}
                     />
                   ) : null}

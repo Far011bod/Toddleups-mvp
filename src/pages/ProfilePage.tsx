@@ -170,7 +170,10 @@ export function ProfilePage() {
                   onError={(e) => {
                     // Fallback to initials if image fails to load
                     e.currentTarget.style.display = 'none';
-                    (e.currentTarget.nextElementSibling as HTMLElement)!.style.display = 'flex';
+                    const nextEl = e.currentTarget.nextElementSibling as HTMLElement | null;
+                    if (nextEl) {
+                      nextEl.style.display = 'flex';
+                    }
                   }}
                 />
               ) : null}

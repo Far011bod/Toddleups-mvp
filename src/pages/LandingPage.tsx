@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Gamepad2, Zap, Wrench, Users } from 'lucide-react';

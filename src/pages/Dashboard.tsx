@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Award, BookOpen, Clock, Star, LogOut } from 'lucide-react';
